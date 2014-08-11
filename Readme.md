@@ -18,20 +18,17 @@ npm install diet-auth
 ```js
 // index.js
 require('diet');
-
 var app = module.app = new App();
 app.domain('http://localhost:8000/');
+app.auth = app.plugin('diet-auth');
 app.start();
-
-require('./auth.js');
 ```
 ```js
 // auth.js
 var app = module.parent.app;
-var auth = app.plugin('diet-auth');
 
 // Setup Auth Service
-var facebook = auth.use('facebook', {
+var facebook = app.auth.use('facebook', {
 	id		: 'yourId',             // facebook app id
 	secret	: 'yourSecret',         // facebook app secret
 	scope	: 'email'               // specify facebook scopes
