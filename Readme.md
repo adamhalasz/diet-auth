@@ -25,7 +25,7 @@ app.start();
 
 require('./auth.js');
 ```
-```
+```js
 // auth.js
 var app = module.parent.app;
 var auth = app.plugin('diet-auth');
