@@ -14,6 +14,7 @@ npm install diet-auth
 *More services are coming soon.*
 
 ## **Example Facebook Authentication**
+
 ```js
 // index.js
 require('diet');
@@ -54,7 +55,8 @@ app.get(facebook.redirect, function($){
 
 ## **API**
 `diet-auth` has a generalised api for all services. The only differences between services is the scope names and the `$.data.user` object.
-```
+
+```js
 // auth.js
 var app = module.parent.app;
 var auth = app.plugin('diet-auth');
