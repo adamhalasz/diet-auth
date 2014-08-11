@@ -1,5 +1,5 @@
 # **diet-auth**
-Dead-simple OAuth Authentication for [diet.js][1].
+Dead-simple authentication for [diet.js][1].
 
 ## **Install**
 ```
