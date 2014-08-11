@@ -1,0 +1,50 @@
+{
+  "name": "diet-auth",
+  "version": "1.0.0",
+  "description": "Dead-simple OAuth Authentication for diet.js",
+  "homepage": "http://github.com/adamhalasz/diet-auth",
+  "keywords": [
+  	"auth",
+    "authorization",
+    "framework",
+    "rest",
+    "api",
+    "facebook",
+    "facebook login",
+    "facebook signup",
+    "google",
+    "google login",
+    "google signup",
+    "auth routing",
+    "https",
+    "routing",
+    "router",
+    "web",
+    "restful",
+    "http",
+    "diet",
+    "dietjs",
+    "diet.js"
+  ],
+  "bugs": {
+    "url": "http://github.com/adamhalasz/diet-auth/issues",
+    "email": "mail@adamhalasz.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamhalasz/diet-auth.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Halász Ádám",
+    "email": "mail@adamhalasz.com",
+    "url": "http://adamhalasz.com/"
+  },
+  "dependencies": {
+    "googleapis": ">=1.0.6"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.8.21"
+  }
+}
