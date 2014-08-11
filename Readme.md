@@ -87,5 +87,5 @@ app.get(yourService.redirect, function($){
 - Yahoo authorization
 - Trello authorization
  
-  [1]: dietjs.com
+  [1]: http://dietjs.com/
   
