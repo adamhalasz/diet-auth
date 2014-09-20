@@ -61,61 +61,7 @@ function Google(app, options, args){
 			}
 		});
 	})
-	/*
-
-	var service = this;
-	service.id = options.id;
-	service.secret = options.secret;
-	service.app = app;
 	
-	service.success = options.success ? options.success : app.domain + 'auth/google/success';
-	service.failure = options.failure ? options.failure : app.domain + 'auth/google/failure';
-	
-	service.redirect = 'auth/google/redirect';
-	service.redirect_uri = app.domain+service.redirect ;
-	
-	service.scopes = options.scope ? '&scope='+options.scope : '' ;
-	
-	// 1. request dialog
-	app.get('/auth/Google', function($){
-		
-		$.redirect('https://www.Google.com/dialog/oauth'
-			+ '?client_id='+service.id
-			+ '&redirect_uri='+service.redirect_uri+service.scopes);
-	});
-	
-	// 2. after dialog
-	app.get('/'+service.redirect, function($){
-		if($.query.code){
-			// 3. get token
-			service.access_token($.query.code, function(access_token_error, access_token_body){
-				var access_token = qs.parse(access_token_body).access_token;
-				
-				if(access_token){
-					request('https://graph.Google.com/v2.0/me?access_token='+access_token, 
-					function(error, http, me_body){
-						$.redirect(service.success+'?'+access_token_body+'&'+qs.stringify({user:me_body}));
-					});
-				} else {
-					var error = JSON.parse(access_token_body).error;
-					error.error = true;
-					$.redirect(service.failure+'?error='+JSON.stringify(error));
-					
-				}
-			});
-		} else if ($.query.token) {
-			service.inspect_access_token(access_token, $.query.token, function(inspect_error, inspect_body){
-				if(!inspect_error){
-					$.redirect(service.success+'?'+inspect_body);
-				} else {
-					$.redirect(service.failure+'?'+inspect_error);
-				}
-			});
-		} else if ($.query.error) {
-			$.redirect(service.failure+'?error='+JSON.stringify($.query.error));
-		}
-	});*/
-
 	return service;
 }
 

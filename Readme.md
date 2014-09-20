@@ -17,31 +17,31 @@ npm install diet-auth
 
 ```js
 // index.js
-require('diet');
-var app = module.app = new App();
-app.domain('http://localhost:8000/');
-app.auth = app.plugin('diet-auth');
-app.start();
+var server = require('diet')
+var app = module.app = new server()
+app.domain('http://localhost:8000/')
+app.auth = app.plugin('diet-auth')
+app.start()
 ```
 ```js
 // auth.js
-var app = module.parent.app;
+var app = module.parent.app
 
 // Setup Auth Service
 var facebook = app.auth.use('facebook', {
 	id		: 'yourId',             // facebook app id
 	secret	: 'yourSecret',         // facebook app secret
 	scope	: 'email'               // specify facebook scopes
-});
+})
 
 // Listen on GET /auth/facebook/redirect
 app.get(facebook.redirect, function($){
     $($.passed){
-        $.end('Hello' + $.data.user.first_name + '!');
+        $.end('Hello' + $.data.user.first_name + '!')
     } else {
-        $.end('Something went wrong: ' + $.error);
+        $.end('Something went wrong: ' + $.error)
     }
-});
+})
 ```
 
  - Visiting `http://localhost:8000/auth/facebook` will bring up the facebook login page.
@@ -55,24 +55,24 @@ app.get(facebook.redirect, function($){
 
 ```js
 // auth.js
-var app = module.parent.app;
-var auth = app.plugin('diet-auth');
+var app = module.parent.app
+var auth = app.plugin('diet-auth')
 
 // Setup Auth Service 
 var yourService = auth.use('yourService', {
 	id		: 'yourServiceId',             // service app id
 	secret	: 'yourServiceSecret',         // service app secret
 	scope	: 'email'                      // specify facebook scopes
-});
+})
 
 // Listen on GET /auth/yourService/redirect
 app.get(yourService.redirect, function($){
     $($.passed){
-        $.end('Hello' + $.data.user.first_name + '!');
+        $.end('Hello' + $.data.user.first_name + '!')
     } else {
-        $.end('Something went wrong: ' + $.error);
+        $.end('Something went wrong: ' + $.error)
     }
-});
+})
 ```
 
 ## **Upcoming Features:**

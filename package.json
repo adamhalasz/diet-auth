@@ -1,6 +1,6 @@
 {
   "name": "diet-auth",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Dead-simple authentication for diet.js",
   "homepage": "http://github.com/adamhalasz/diet-auth",
   "keywords": [
@@ -41,7 +41,8 @@
     "url": "http://adamhalasz.com/"
   },
   "dependencies": {
-    "googleapis": ">=1.0.6"
+    "googleapis": ">=1.0.6",
+    "request": ">=2.42.0"
   },
   "main": "index.js",
   "engines": {
