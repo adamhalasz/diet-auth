@@ -1,5 +1,6 @@
-module.exports.use = function(service, options){
-	var service = require('./services/'+service);
-	return new service(module.parent.app, options);
+module.exports = function(app){
+	return function(service, options){
+		var Service = require('./services/'+service);
+		return new Service(app, options);
+	}
 }
-module.parent.return();

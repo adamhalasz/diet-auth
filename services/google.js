@@ -14,7 +14,7 @@ function Google(app, options, args){
 	var options = options || {};
 	var service = this;
 	service.dialog = options.dialog || '/auth/google';
-	service.redirectPath = options.redirect ? options.redirect : app.domain+'auth/google/redirect';
+	service.redirectPath = options.redirect ? options.redirect : app.location.href+'auth/google/redirect';
 	service.redirect = url.parse(service.redirectPath).pathname;
 	service.oauth = new OAuth2(options.id, options.secret, service.redirectPath);
 	service.response = options.response || '/auth/google/response';

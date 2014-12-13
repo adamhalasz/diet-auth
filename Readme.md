@@ -18,14 +18,9 @@ npm install diet-auth
 ```js
 // index.js
 var server = require('diet')
-var app = module.app = new server()
-app.domain('http://localhost:8000/')
-app.auth = app.plugin('diet-auth')
-app.start()
-```
-```js
-// auth.js
-var app = module.parent.app
+var app = server()
+app.listen('http://localhost:8000/')
+var auth  = require('diet-auth')
 
 // Setup Auth Service
 var facebook = app.auth.use('facebook', {
@@ -54,10 +49,6 @@ app.get(facebook.redirect, function($){
 `diet-auth` has a generalised api for all services. The only differences between services is the scope names and the `$.data.user` object.
 
 ```js
-// auth.js
-var app = module.parent.app
-var auth = app.plugin('diet-auth')
-
 // Setup Auth Service 
 var yourService = auth.use('yourService', {
 	id		: 'yourServiceId',             // service app id

@@ -11,7 +11,7 @@ function Facebook(app, options){
 	service.response = options.success ? options.success : app.domain + 'auth/facebook/response';
 	service.dialog = options.dialog || '/auth/facebook';
 	service.redirect = '/auth/facebook/redirect';
-	service.redirect_uri = app.domain+service.redirect.substr(1) ;
+	service.redirect_uri = app.location.href+service.redirect.substr(1) ;
 	
 	service.scopes = options.scope ? '&scope='+options.scope : '' ;
 	
