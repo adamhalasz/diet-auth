@@ -20,10 +20,10 @@ npm install diet-auth
 var server = require('diet')
 var app = server()
 app.listen('http://localhost:8000/')
-var auth  = require('diet-auth')
+var auth  = require('diet-auth')(app)
 
 // Setup Auth Service
-var facebook = app.auth.use('facebook', {
+var facebook = auth('facebook', {
 	id		: 'yourId',             // facebook app id
 	secret	: 'yourSecret',         // facebook app secret
 	scope	: 'email'               // specify facebook scopes
