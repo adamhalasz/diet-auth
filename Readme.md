@@ -50,7 +50,7 @@ app.get(facebook.redirect, function($){
 
 ```js
 // Setup Auth Service 
-var yourService = auth.use('yourService', {
+var yourService = auth('yourService', {
 	id		: 'yourServiceId',             // service app id
 	secret	: 'yourServiceSecret',         // service app secret
 	scope	: 'email'                      // specify facebook scopes
